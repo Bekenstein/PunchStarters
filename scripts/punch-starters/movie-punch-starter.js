@@ -20,3 +20,5 @@ class MoviePunchStarter extends basePunchStarter {
 }
 
 module.exports = MoviePunchStarter;
+
+//console.log(new MoviePunchStarter(10,"Pesho","Gosho","Action",["Petko","Metko","Getko"],1,"Stamat",["Kamen","Balen"]));
