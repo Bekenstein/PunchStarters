@@ -39,14 +39,13 @@ class BasePunchStarter {
         this._targetPrice = (function (targetPrice) {
             return BasePunchStarter.checkNumberValidaty(targetPrice);
         })(targetPrice);
-
+        this.accumulatedMoney = 0;
     }
     set accumulatedMoney(money){
         this._accumulatedMoney=BasePunchStarter.checkNumberValidaty(money);
     }
     get accumulatedMoney(){
         return this._accumulatedMoney;
-
     }
     get id(){
         return this._id;

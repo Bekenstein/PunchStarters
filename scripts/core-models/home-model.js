@@ -33,11 +33,21 @@ class HomeModel {
             );
 
             let punchStarterDatabase = require('../app.js');
+            let progressArr = [];
             for(let punch of punchStarterDatabase){
-                console.log(punch);
-            let progress = (punch.accumulatedMoney / punch.targetPrice) * 100;
-            console.log(progress)
-        }
+                let progress = (punch.accumulatedMoney / punch.targetPrice) * 100;
+                progressArr.push(progress);
+            }
+            let sortedPunchstarters = [];
+            progressArr.sort((a,b) => b-a);
+            console.log(progressArr);
+            // for(let punch of sortedPunchstarters){
+            //     for(let progressNum of progressArr){
+            //         if(punch.accumulatedMoney / punch.targetPrice * 100 == progressNum){
+            //             sortedPunchstarters.add(punch);
+            //         }
+            //     }
+            // }
 
         } else {
             $('.wrapper header .header-button-holder').html(
