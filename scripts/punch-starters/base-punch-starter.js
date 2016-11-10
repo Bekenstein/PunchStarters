@@ -14,34 +14,53 @@ class BasePunchStarter {
             throw new TypeError("Cannot construct BasePunchStarter instances directly");
         }
         let _this = this;
-        this.id = (function (id) {
+        this._id = (function (id) {
             return _this.checkNumberValidaty(id);
         })(id);
 
-        this.name = (function (name) {
+        this._name = (function (name) {
             return _this.checkStringValidaty(name);
         })(name);
 
-        this.manufacturer = (function (manufacturer) {
+        this._manufacturer = (function (manufacturer) {
             return _this.checkStringValidaty(manufacturer);
         })(manufacturer);
-        this.description = (function (description) {
+        this._description = (function (description) {
             return _this.checkStringValidaty(description);
         })(description);
-        this.genres = (function (genres) {
+        this._genres = (function (genres) {
             let returnVal=[];
+            if(!typeof genres==='array') throw new TypeError()
             for(let index in genres){
                  returnVal.push(_this.checkStringValidaty(genres[Number(index)]));
             }
             return returnVal;
         })(genres);
-        this.targetPrice = (function (targetPrice) {
+        this._targetPrice = (function (targetPrice) {
             return _this.checkNumberValidaty(targetPrice);
         })(targetPrice);
 
     }
+    get id(){
+        return this._id;
+    }
+    get name(){
+        return this._name;
+    }
+    get manufacturer(){
+        return this._manufacturer;
+    }
+    get description(){
+        return this._description;
+    }
+    get genres(){
+        return this._genres;
+    }
+    get targetPrice(){
+        return this._targetPrice;
+    }
 
 
-    //TODO: Implement BasePunchStarter
 }
+
 module.exports = BasePunchStarter;
