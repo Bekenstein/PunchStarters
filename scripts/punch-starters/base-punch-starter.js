@@ -14,11 +14,10 @@ class BasePunchStarter {
         else throw new TypeError();
     }
 
-    constructor(type, id, name, manufacturer, description, genres, targetPrice) {
+    constructor(id, name, manufacturer, description, genres, targetPrice) {
         if (new.target === BasePunchStarter) {
             throw new TypeError("Cannot construct BasePunchStarter instances directly");
         }
-        this._type = type;
         this._id = BasePunchStarter.validateNumber(id);
         this._name = BasePunchStarter.validateString(name);
         this._manufacturer = BasePunchStarter.validateString(manufacturer);

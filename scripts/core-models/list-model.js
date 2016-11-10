@@ -27,7 +27,7 @@ class ListModel {
                 .append($('<td>').text(data.id))
                 .append($('<td>').text(data.name))
                 .append($('<td>').text(data.manufacturer))
-                .append($('<td>').text(data._type))
+                .append($('<td>').text(data.constructor.name.replace('PunchStarter','')))
                 .append($('<td>').text(`${progress}%`)));
         }
 
