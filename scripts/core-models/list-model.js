@@ -4,6 +4,8 @@ class ListModel {
 
     }
     render(database){
+        database.sort((a,b)=> a[0]-b[0]);
+        console.log(database);
     }
 }
 
