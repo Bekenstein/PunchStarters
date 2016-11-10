@@ -4,7 +4,7 @@ class MoviePunchStarter extends BasePunchStarter {
 
 	//TODO: Implement MoviePunchStarter
     constructor(id,name,manufacturer,description,genres,targetPrice,director,actor){
-        super(id,name,manufacturer,description,genres,targetPrice);
+        super('Movie',id,name,manufacturer,description,genres,targetPrice);
         this._director = BasePunchStarter.checkStringValidaty(director);
         if(!Array.isArray(actor)){
             throw new TypeError("opa");

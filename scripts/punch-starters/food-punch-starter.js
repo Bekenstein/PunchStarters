@@ -2,7 +2,7 @@ let BasePunchStarter = require('./base-punch-starter.js');
 
 class FoodPunchStarter extends BasePunchStarter{
     constructor(id, name, manufacturer, description,genres,targetPrice, ingredients, recipe){
-        super(id, name, manufacturer, description,genres,targetPrice);
+        super('Food',id, name, manufacturer, description,genres,targetPrice);
         if(!Array.isArray(ingredients)){
             throw new TypeError('ingredients should be an Array')
         }

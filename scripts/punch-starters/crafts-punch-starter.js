@@ -3,7 +3,7 @@ let BasePunchStarter = require('./base-punch-starter.js');
 class CraftsPunchStarter extends BasePunchStarter {
 
     constructor(id, name, manufacturer, description, genres, targetPrice, resources) {
-        super(id, name, manufacturer, description, genres, targetPrice);
+        super('Crafts',id, name, manufacturer, description, genres, targetPrice);
         this._resources = (function (resources) {
             let returnVal = [];
             if (!typeof resources == 'array') throw new TypeError();

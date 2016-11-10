@@ -9,11 +9,12 @@ class BasePunchStarter {
         else throw new TypeError();
     }
 
-    constructor(id, name, manufacturer, description, genres, targetPrice) {
+    constructor(type,id, name, manufacturer, description, genres, targetPrice) {
         if (new.target === BasePunchStarter) {
             throw new TypeError("Cannot construct BasePunchStarter instances directly");
         }
         let _this = this;
+        this.type=type;
         this._id = (function (id) {
             return BasePunchStarter.checkNumberValidaty(id);
         })(id);
