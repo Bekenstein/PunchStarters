@@ -4,7 +4,20 @@ class HomeModel {
 
     render(isLoggedIn, database) {
         if (isLoggedIn) {
-            //TODO: Implement Logged In State Logic
+            alert('hi');
+            $('.wrapper header .header-button-holder').html(
+                '<div class="header-button home-redirect">' +
+                '   <p>Home</p>' +
+                '</div>' +
+                '<div class="header-button list-redirect">' +
+                '   <p>PunchStarter Lis</p>' +
+                '</div>' +
+                '<div class="header-button create-redirect">' +
+                '   <p>Create</p>' +
+                '</div>' +
+                '<div class="header-button logout-redirect">' +
+                '   <p>Logout</p>' +
+                '</div>');
         } else {
             $('.wrapper header .header-button-holder').html(
                 '<div class="header-button home-redirect">' +
