@@ -4,7 +4,6 @@ class HomeModel {
 
     render(isLoggedIn, database) {
         if (isLoggedIn) {
-            alert('hi');
             $('.wrapper header .header-button-holder').html(
                 '<div class="header-button home-redirect">' +
                 '   <p>Home</p>' +
@@ -18,6 +17,14 @@ class HomeModel {
                 '<div class="header-button logout-redirect">' +
                 '   <p>Logout</p>' +
                 '</div>');
+
+            $('.wrapper main').html(
+                '<div class="top-3-starters-wrapper">' +
+                    '<div class="punch-starter-holder"></div>' +
+                '<div class="punch-starter-holder"></div>' +
+                '<div class="punch-starter-holder"></div>' +
+                '</div>'
+            );
         } else {
             $('.wrapper header .header-button-holder').html(
                 '<div class="header-button home-redirect">' +
