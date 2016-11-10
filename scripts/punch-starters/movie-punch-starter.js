@@ -1,6 +1,6 @@
-let basePunchStarter = require("./base-punch-starter.js");
+let BasePunchStarter = require("./base-punch-starter.js");
 
-class MoviePunchStarter extends basePunchStarter {
+class MoviePunchStarter extends BasePunchStarter {
 
 	//TODO: Implement MoviePunchStarter
     constructor(id,name,manufacturer,description,genres,targetPrice,director,actor){
@@ -8,7 +8,7 @@ class MoviePunchStarter extends basePunchStarter {
         this._director = BasePunchStarter.checkStringValidaty(director);
         if(!Array.isArray(actor)){
             throw new TypeError("opa");
-        }
+}
         this._actor = actor;
     }
     get director(){
