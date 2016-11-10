@@ -9,7 +9,7 @@ class HomeModel {
                 '   <p>Home</p>' +
                 '</div>' +
                 '<div class="header-button list-redirect">' +
-                '   <p>PunchStarter Lis</p>' +
+                '   <p>PunchStarter List</p>' +
                 '</div>' +
                 '<div class="header-button create-redirect">' +
                 '   <p>Create</p>' +
@@ -31,6 +31,14 @@ class HomeModel {
                 '<div class="punch-starter-holder"></div>' +
                 '</div>'
             );
+
+            let punchStarterDatabase = require('../app.js');
+            for(let punch of punchStarterDatabase){
+                console.log(punch);
+            let progress = (punch.accumulatedMoney / punch.targetPrice) * 100;
+            console.log(progress)
+        }
+
         } else {
             $('.wrapper header .header-button-holder').html(
                 '<div class="header-button home-redirect">' +
