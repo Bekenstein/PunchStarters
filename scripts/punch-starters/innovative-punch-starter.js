@@ -5,5 +5,4 @@ class InnovativePunchStarter extends basePunchStarter {
         super(id, name, manufacturer, description, genres, targetPrice);
     }
 }
-
 module.exports = InnovativePunchStarter;
