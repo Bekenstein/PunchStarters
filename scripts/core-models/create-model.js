@@ -1,4 +1,7 @@
 class CreateModel {
+    constructor(){
+
+    }
     //TODO: Implement Create Model
 }
 

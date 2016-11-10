@@ -1,69 +1,62 @@
 class BasePunchStarter {
-    static checkStringValidaty(obj) {
+    static validateString(obj) {
         if (typeof obj == 'string') return obj;
         else throw new TypeError();
     }
 
-    static checkNumberValidaty(obj) {
+    static validateNumber(obj) {
         if (typeof obj == 'number') return obj;
         else throw new TypeError();
     }
 
-    constructor(type,id, name, manufacturer, description, genres, targetPrice) {
+    static validateArray(obj) {
+        if (Array.isArray(obj)) return obj;
+        else throw new TypeError();
+    }
+
+    constructor(type, id, name, manufacturer, description, genres, targetPrice) {
         if (new.target === BasePunchStarter) {
             throw new TypeError("Cannot construct BasePunchStarter instances directly");
         }
-        let _this = this;
-        this.type=type;
-        this._id = (function (id) {
-            return BasePunchStarter.checkNumberValidaty(id);
-        })(id);
-
-        this._name = (function (name) {
-            return BasePunchStarter.checkStringValidaty(name);
-        })(name);
-
-        this._manufacturer = (function (manufacturer) {
-            return BasePunchStarter.checkStringValidaty(manufacturer);
-        })(manufacturer);
-        this._description = (function (description) {
-            return BasePunchStarter.checkStringValidaty(description);
-        })(description);
-        this._genres = (function (genres) {
-            let returnVal=[];
-            if(!typeof genres==='array') throw new TypeError();
-            for(let index in genres){
-                 returnVal.push(BasePunchStarter.checkStringValidaty(genres[Number(index)]));
-            }
-            return returnVal;
-        })(genres);
-        this._targetPrice = (function (targetPrice) {
-            return BasePunchStarter.checkNumberValidaty(targetPrice);
-        })(targetPrice);
+        this._type = type;
+        this._id = BasePunchStarter.validateNumber(id);
+        this._name = BasePunchStarter.validateString(name);
+        this._manufacturer = BasePunchStarter.validateString(manufacturer);
+        this._description = BasePunchStarter.validateString(description);
+        this._genres = BasePunchStarter.validateArray(genres).map(x=>BasePunchStarter.validateString(x));
+        this._targetPrice = BasePunchStarter.validateNumber(targetPrice);
         this.accumulatedMoney = 0;
     }
-    set accumulatedMoney(money){
-        this._accumulatedMoney=BasePunchStarter.checkNumberValidaty(money);
+
+    set accumulatedMoney(money) {
+        this._accumulatedMoney = BasePunchStarter.validateNumber(money);
     }
-    get accumulatedMoney(){
+
+    get accumulatedMoney() {
         return this._accumulatedMoney;
     }
-    get id(){
+
+    get id() {
         return this._id;
     }
-    get name(){
+
+    get name() {
         return this._name;
     }
-    get manufacturer(){
+
+    get manufacturer() {
         return this._manufacturer;
     }
-    get description(){
+
+    get description() {
         return this._description;
     }
-    get genres(){
+
+    get genres() {
         return this._genres;
     }
-    get targetPrice(){
+
+    get targetPrice() {
         return this._targetPrice;
     }
 
