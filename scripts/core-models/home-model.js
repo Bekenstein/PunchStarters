@@ -26,28 +26,32 @@ class HomeModel {
                 'Top 3 Punchstarters' +
                 '</div>' +
                 '<div class="top-3-starters-wrapper">' +
-                '<div class="punch-starter-holder"></div>' +
-                '<div class="punch-starter-holder"></div>' +
-                '<div class="punch-starter-holder"></div>' +
                 '</div>'
             );
 
-            let punchStarterDatabase = require('../app.js');
-            let progressArr = [];
-            for(let punch of punchStarterDatabase){
+            let progressArray = [];
+            for(let punch of database){
                 let progress = (punch.accumulatedMoney / punch.targetPrice) * 100;
-                progressArr.push(progress);
+                progressArray.push(progress);
             }
-            let sortedPunchstarters = [];
-            progressArr.sort((a,b) => b-a);
-            console.log(progressArr);
-            // for(let punch of sortedPunchstarters){
-            //     for(let progressNum of progressArr){
-            //         if(punch.accumulatedMoney / punch.targetPrice * 100 == progressNum){
-            //             sortedPunchstarters.add(punch);
-            //         }
-            //     }
-            // }
+            let sortedPunchStarters = [];
+            progressArray.sort((a,b) => b-a);
+
+            for(let i =0; i < 3; i++){
+                for(let punch of database){
+                    let progress = (punch.accumulatedMoney / punch.targetPrice) * 100;
+                    if(progressArray[i] == progress){
+                        sortedPunchStarters.push(punch);
+                        let container = $('.top-3-starters-wrapper');
+                        let punchBox = $('<div class="punch-starter-holder">');
+                        container.append(punchBox);
+                        punchBox.append($('<label>').text(punch.name));
+                        punchBox.append($('<label>').text(punch.manufacturer));
+                        punchBox.append($('<label>').text(`${punch.accumulatedMoney} / ${punch.targetPrice}`));
+                    }
+                }
+            }
+
 
         } else {
             $('.wrapper header .header-button-holder').html(
