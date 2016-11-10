@@ -3,6 +3,10 @@ class LoginModel {
     }
 
     render(isLoggedIn, database) {
+        if(isLoggedIn){
+
+        }
+
         $('.wrapper main').html(
             '<div class="stars"></div>' +
             '<div class="twinkling"></div>' +
