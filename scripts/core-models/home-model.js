@@ -32,26 +32,18 @@ class HomeModel {
             addTop3punches('.top-3-starters-wrapper', database);
 
             function addTop3punches(selector, database) {
-                let progressArray = [];
-                for(let punch of database){
-                    let progress = (punch.accumulatedMoney / punch.targetPrice) * 100;
-                    progressArray.push(progress);
-                }
-                let sortedPunchStarters = [];
-                progressArray.sort((a,b) => b-a);
-
+                database.sort((a,b)=>{
+                  return (b.accumulatedMoney / b.targetPrice) -(a.accumulatedMoney / a.targetPrice);
+               });
                 for(let i =0; i < 3; i++){
-                    for(let punch of database){
-                        let progress = (punch.accumulatedMoney / punch.targetPrice) * 100;
-                        if(progressArray[i] == progress){
-                            sortedPunchStarters.push(punch);
+                    let punch= database[i];
                             let punchBox = $('<div class="punch-starter-holder">');
                             punchBox.append($('<label>').text(punch.name));
                             punchBox.append($('<label>').text(punch.manufacturer));
                             punchBox.append($('<label>').text(`${punch.accumulatedMoney} / ${punch.targetPrice}`));
                             $(selector).append(punchBox);
-                        }
-                    }
+
+
                 }
             }
 

@@ -28,6 +28,7 @@ class ListModel {
                 .append($('<td>').text(data.name))
                 .append($('<td>').text(data.manufacturer))
                 .append($('<td>').text(data._type))
+                .append($('<td>').text(`${progress}%`)));
         }
 
         html.append($('<table>').addClass('punch-starter-table').append(table));
