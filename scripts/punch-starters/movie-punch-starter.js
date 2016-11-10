@@ -5,7 +5,7 @@ class MoviePunchStarter extends basePunchStarter {
 	//TODO: Implement MoviePunchStarter
     constructor(id,name,manufacturer,description,genres,targetPrice,director,actor){
         super(id,name,manufacturer,description,genres,targetPrice);
-        this._director = this.checkStringValidaty(director);
+        this._director = BasePunchStarter.checkStringValidaty(director);
         if(!Array.isArray(actor)){
             throw new TypeError("opa");
         }
@@ -18,7 +18,7 @@ class MoviePunchStarter extends basePunchStarter {
         return this._actor;
     }
 }
+//console.log(new MoviePunchStarter(2,'Name','Sony','Descr',['fg','sg'],34,'sss',['33']));
 
 module.exports = MoviePunchStarter;
-
 //console.log(new MoviePunchStarter(10,"Pesho","Gosho","Action",["Petko","Metko","Getko"],1,"Stamat",["Kamen","Balen"]));

@@ -1,11 +1,11 @@
 class BasePunchStarter {
-    checkStringValidaty(obj) {
-        if (typeof obj === 'string') return obj;
+    static checkStringValidaty(obj) {
+        if (typeof obj == 'string') return obj;
         else throw new TypeError();
     }
 
-    checkNumberValidaty(obj) {
-        if (typeof obj === 'number') return obj;
+    static checkNumberValidaty(obj) {
+        if (typeof obj == 'number') return obj;
         else throw new TypeError();
     }
 
@@ -15,29 +15,29 @@ class BasePunchStarter {
         }
         let _this = this;
         this._id = (function (id) {
-            return _this.checkNumberValidaty(id);
+            return BasePunchStarter.checkNumberValidaty(id);
         })(id);
 
         this._name = (function (name) {
-            return _this.checkStringValidaty(name);
+            return BasePunchStarter.checkStringValidaty(name);
         })(name);
 
         this._manufacturer = (function (manufacturer) {
-            return _this.checkStringValidaty(manufacturer);
+            return BasePunchStarter.checkStringValidaty(manufacturer);
         })(manufacturer);
         this._description = (function (description) {
-            return _this.checkStringValidaty(description);
+            return BasePunchStarter.checkStringValidaty(description);
         })(description);
         this._genres = (function (genres) {
             let returnVal=[];
-            if(!typeof genres==='array') throw new TypeError()
+            if(!typeof genres==='array') throw new TypeError();
             for(let index in genres){
-                 returnVal.push(_this.checkStringValidaty(genres[Number(index)]));
+                 returnVal.push(BasePunchStarter.checkStringValidaty(genres[Number(index)]));
             }
             return returnVal;
         })(genres);
         this._targetPrice = (function (targetPrice) {
-            return _this.checkNumberValidaty(targetPrice);
+            return BasePunchStarter.checkNumberValidaty(targetPrice);
         })(targetPrice);
 
     }
@@ -59,7 +59,6 @@ class BasePunchStarter {
     get targetPrice(){
         return this._targetPrice;
     }
-
 
 }
 
