@@ -41,6 +41,13 @@ class BasePunchStarter {
         })(targetPrice);
 
     }
+    set accumulatedMoney(money){
+        this._accumulatedMoney=BasePunchStarter.checkNumberValidaty(money);
+    }
+    get accumulatedMoney(){
+        return this._accumulatedMoney;
+
+    }
     get id(){
         return this._id;
     }
