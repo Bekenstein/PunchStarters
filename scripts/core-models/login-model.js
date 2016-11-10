@@ -2,7 +2,7 @@ class LoginModel {
     constructor() {
     }
 
-    render() {
+    render(isLoggedIn, database) {
         $('.wrapper main').html(
             '<div class="stars"></div>' +
             '<div class="twinkling"></div>' +
