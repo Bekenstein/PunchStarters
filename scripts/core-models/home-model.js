@@ -17,9 +17,16 @@ class HomeModel {
                 '<div class="header-button logout-redirect">' +
                 '   <p>Logout</p>' +
                 '</div>');
+
             $('.wrapper main').html(
+                '<div class="home-logged-in-welcome">' +
+                    'Welcome, '+ sessionStorage['username'] + '!' +
+                '</div>' +
+                '<div class="home-logged-in-title">' +
+                'Top 3 Punchstarters' +
+                '</div>' +
                 '<div class="top-3-starters-wrapper">' +
-                    '<div class="punch-starter-holder"></div>' +
+                '<div class="punch-starter-holder"></div>' +
                 '<div class="punch-starter-holder"></div>' +
                 '<div class="punch-starter-holder"></div>' +
                 '</div>'
