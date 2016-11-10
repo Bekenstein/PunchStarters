@@ -17,7 +17,6 @@ class HomeModel {
                 '<div class="header-button logout-redirect">' +
                 '   <p>Logout</p>' +
                 '</div>');
-
             $('.wrapper main').html(
                 '<div class="top-3-starters-wrapper">' +
                     '<div class="punch-starter-holder"></div>' +
