@@ -1,4 +1,4 @@
-let basePunchStarter = require("./base-punch-starter");
+let basePunchStarter = require("./base-punch-starter.js");
 
 class MoviePunchStarter extends basePunchStarter {
 

@@ -1,4 +1,4 @@
-let BasePunchStarter = require('./base-punch-starter');
+let BasePunchStarter = require('./base-punch-starter.js');
 
 class GamePunchStarter extends BasePunchStarter{
 	constructor(id, name, manufacturer, description,genres,targetPrice, technologiesUsed){
