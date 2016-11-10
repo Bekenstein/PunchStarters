@@ -3,8 +3,15 @@ class ListModel {
     constructor() {
 
     }
+
     render(database) {
-        database.sort((a, b)=> a[0] - b[0]);
+        database.sort((a, b)=> {
+            console.log(a);
+            console.log(a[0]);
+            let oldReturn = a[0] - b[0];
+            console.log(oldReturn);
+            return a.id - b.id;
+        });
         let html = $('<div>').addClass('punch-starter-list-holder');
         let table = $('<tbody>');
         table.append($('<tr>')
@@ -21,7 +28,6 @@ class ListModel {
                 .append($('<td>').text(data.name))
                 .append($('<td>').text(data.manufacturer))
                 .append($('<td>').text(data._type))
-                .append($('<td>').text(''+progress+'%')));
         }
 
         html.append($('<table>').addClass('punch-starter-table').append(table));
