@@ -59,6 +59,11 @@ class HomeModel {
             //TODO: List redirect onclick
             //TODO: Create redirect onclick
 			//TODO: Logout redirect onclick
+            $('.logout-redirect').on('click', function(){
+                sessionStorage.removeItem('username');
+                $('.wrapper main').trigger('changePage',['home']);
+            });
+
         } else {
             $('.home-redirect').on('click', function () {
                 $('.wrapper main').trigger('changePage', ['home']);
