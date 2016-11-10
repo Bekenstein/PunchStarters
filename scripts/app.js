@@ -116,4 +116,4 @@ punchStarterDatabase[4].accumulatedMoney = 213;
 homeModel.render();
 homeModel.attachEvents();
 
-console.log('changed');
+console.log('github test');
