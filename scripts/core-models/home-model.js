@@ -56,8 +56,17 @@ class HomeModel {
     attachEvents(isLoggedIn) {
         if (isLoggedIn) {
             //TODO: Home redirect onclick
+            $('.home-redirect').on('click', function(){
+                $('.wrapper main').trigger('changePage',['home']);
+            });
             //TODO: List redirect onclick
+            $('.list-redirect').on('click', function(){
+                $('.wrapper main').trigger('changePage',['list']);
+            });
             //TODO: Create redirect onclick
+            $('.create-redirect').on('click', function(){
+                $('.wrapper main').trigger('changePage',['create']);
+            });
 			//TODO: Logout redirect onclick
             $('.logout-redirect').on('click', function(){
                 sessionStorage.removeItem('username');
