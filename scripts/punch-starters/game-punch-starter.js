@@ -7,7 +7,7 @@ class GamePunchStarter extends BasePunchStarter{
     }
     get technologiesUsed(){
         if(!Array.isArray(this._technologiesUsed)){
-            throw new Error('technology used should be an Array');
+            throw new TypeError('technology used should be an Array');
         }
         return this._technologiesUsed;
     }
