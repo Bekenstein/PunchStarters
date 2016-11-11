@@ -1,7 +1,7 @@
 function render(){
     let html = '<label>Technologies:</label>' +
         '<div class="list-holder"><select class="input-technologies"></select></div>' +
-        '<div><input class="new-technology" placeholder="Add technology..."></div>' +
+        '<div class="input-holder"><input class="new-technology" placeholder="Add technology..."></div>' +
         '<div class="button-holder">' +
             '<button class="add-technology-button">Add</button>' +
             '<button class="remove-technology-button">Remove</button>' +

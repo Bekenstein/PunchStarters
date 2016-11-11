@@ -1,7 +1,7 @@
 function render(){
     let html = '<label>Resources needed:</label>' +
         '<div class="list-holder"><select class="input-resources"></select></div>' +
-        '<div><input class="new-resource" placeholder="Add resource..."></div>' +
+        '<div class="input-holder"><input class="new-resource" placeholder="Add resource..."></div>' +
         '<div class="button-holder">' +
         '<button class="add-resource-button">Add</button>' +
         '<button class="remove-resource-button">Remove</button>' +
