@@ -3,7 +3,6 @@ class PunchStarterModel {
     constructor() {
 
     }
-
     render(punchStarter) {
         let html = `<div class="punch-starter-wrapper">                                          ` +
             `<div class="punch-starter-caption">                                        ` +
@@ -21,7 +20,6 @@ class PunchStarterModel {
             `<div class="punch-starter-progress">                                       ` +
             `</div>                                                                       ` +
             `</div>                                                                         `;
-        console.log(html);
 
         $('.wrapper main').html(html);
         this.renderLists(punchStarter);
@@ -92,14 +90,6 @@ class PunchStarterModel {
         $('.punch-starter-lists').html(html);
     }
 
-    // renderProgress(punchStarter){
-    //   let html = `<p>Progress</p>`+
-    //           `<div class="donate-holder">`+
-    //           `<div class="progress-bar-outer">`+
-    //           `<div class="progress-bar-inner">`+
-    //           ``
-    //
-    // }
     renderProgress(punchStarter) {
         let progress = Math.round((punchStarter.accumulatedMoney / punchStarter.targetPrice) * 100);
         if (Number.isNaN(progress) || !progress) {
@@ -112,8 +102,10 @@ class PunchStarterModel {
                         .append(($('<div>')).addClass('progress-bar-inner').text(progress)))
                     .append(($('<input>').attr('type', 'number').attr('id', 'donate-input')))
                     .append(($('<button>').text('Donate').on('click', function () {
-                        let moneyToAdd = $('#donate-input').val();
-                        punchStarter.accumulatedMoney(punchStarter.accumulatedMoney+moneyToAdd);
+                        let moneyToAdd = Number($('#donate-input').val());
+                        let accumulatedMoney = punchStarter.accumulatedMoney();
+                        punchStarter.accumulatedMoney(accumulatedMoney+moneyToAdd);
+
                     }))));
 
         $('.progress-bar-inner').css('width', (progress < 10 ? (progress * 0.7) + "vw" : "70vw"));

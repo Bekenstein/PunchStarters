@@ -1,17 +1,17 @@
 class BasePunchStarter {
     static validateString(obj) {
         if (typeof obj == 'string') return obj;
-        else throw new TypeError();
+        else throw new TypeError('Not a string');
     }
 
     static validateNumber(obj) {
         if (typeof obj == 'number') return obj;
-        else throw new TypeError();
+        else throw new TypeError("Not a number");
     }
 
     static validateArray(obj) {
         if (Array.isArray(obj)) return obj;
-        else throw new TypeError();
+        else throw new TypeError('Not Array');
     }
 
     constructor(id, name, manufacturer, description, genres, targetPrice) {
