@@ -3,7 +3,9 @@ class CreateModel {
 
     }
     render(categories){
-        //TODO:
+        console.log('a');
+        console.log('b');
+        console.log('c');
     }
     attachEvents(){
         //TODO:
@@ -23,18 +25,18 @@ class CreateModel {
         //TODO:
     }
 
-    renderCreateInnovativeMovieModel(){
+    renderCreateInnovativeModel(){
         //TODO:
     }
 
-    renderCreateFoodMovieModel(){
+    renderCreateFoodModel(){
         //TODO:
     }
     attachEventsCreateFoodModel(){
         //TODO:
     }
 
-    renderCreateCraftsMovieModel(){
+    renderCreateCraftsModel(){
         //TODO:
     }
     attachEventsCreateCraftsModel(){
