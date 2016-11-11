@@ -61,7 +61,7 @@ class PunchStarterModel {
                 html += `<div>` +
                     `<label>Technologies Used</label>`;
                 for (let technologies of punchStarter.technologiesUsed) {
-                    html += `<li>${obj.technologies}</li>`;
+                    html += `<li>${technologies}</li>`;
                 }
                 html += `</div>`;
                 break;
