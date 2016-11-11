@@ -3,6 +3,7 @@ let game = require('./functions/game.js');
 let innovative = require('./functions/innovative.js');
 let food = require('./functions/food.js');
 let crafts = require('./functions/crafts.js');
+let submitButton = require('./functions/submit.js');
 
 class CreateModel {
     constructor() {
@@ -95,6 +96,8 @@ class CreateModel {
                 }
             }
         });
+
+        $('.submit-button-holder').on('click', submitButton.submit);
     }
 
     renderCreateMovieModel() {
