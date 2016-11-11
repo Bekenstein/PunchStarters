@@ -4,23 +4,27 @@ class PunchStarterModel {
 
     }
     render(punchStarter){
-     let html = `<div class = "punch-starter-wrapper">                                          `+
-                  `<div class = "punch-starter-caption">                                        `+
+     let html = `<div class="punch-starter-wrapper">                                          `+
+                  `<div class="punch-starter-caption">                                        `+
                     `<label>${punchStarter.name}</label>                                        `+
                     `<label>${punchStarter.constructor.name.replace('PunchStarter','')}</label> `+
                   `</div>                                                                       `+
-                  `<div class = "punch-starter-resume">                                         `+
+                  `<div class="punch-starter-resume">                                         `+
                     `<label>Manufacturer</label>                                                `+
                     `<p>${punchStarter.manufacturer}</p>                                        `+
                     `<label>Description</label>                                                 `+
                     `<p>${punchStarter.description}</p>                                         `+
                   `</div>                                                                       `+
-                  `<div class = "punch-starter-lists">                                          `+
+                  `<div class="punch-starter-lists">                                          `+
                   `</div>                                                                       `+
-                  `<div class = "punch-starter-progress">                                       `+
+                  `<div class="punch-starter-progress">                                       `+
                   `</div>                                                                       `+
                 `</div>                                                                         `;
+        console.log(html);
+
         $('.wrapper main').html(html);
+        this.renderLists(punchStarter);
+
     }
     attachEvents(punchStarter){
 
@@ -29,8 +33,8 @@ class PunchStarterModel {
     let html = `<div>                                                                           `+
                  `<label>Genres</label>                                                         `+
                  `<ul>                                                                          `;
-        for(let obj of punchStarter){
-            html+= `<li>${obj.genres}</li>\n`;
+        for(let genres of punchStarter.genres){
+            html+= `<li>${genres}</li>\n`;
         }
         html+= `</ul>                                                                           `+
                 `</div>                                                                         `;
@@ -56,8 +60,32 @@ class PunchStarterModel {
                     html += `<li>${obj.technologies}</li>`;
                 }
                 html += `</div>`;
+                break;
+            case 'Innovative':
+                break;
+            case 'Food':
+                html += `<div>`+
+                        `<label>Ingredients</label>`;
+                for(let ingredients of punchStarter.ingredients){
+                    html += `<li>${ingredients}</li>`;
+                }
+                html+= `</div>`;
+                html += `<div>`+
+                         `<label>Recipe</label>`+
+                         `<p>${punchStarter.recipe}</p>`+
+                        `</div>`;
+                break;
+                break;
+            case 'Crafts':
+                html += `<div>`+
+                    `<label>Resources</label>`;
+                for(let resources of punchStarter.resources){
+                    html += `<li>${resources}</li>`;
+                }
+                html+= `</div>`;
+                break;
         }
-
+        $('.punch-starter-lists').html(html);
     }
 
     renderProgress(punchStarter){
