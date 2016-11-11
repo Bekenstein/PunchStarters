@@ -25,15 +25,15 @@ class CreateModel {
                 .append(selectList));
         let form = $('<form>')
             .append($('<div>').addClass('main-parameters')
-                .append($('<label>').text('Name:')
-                    .append($('<div>').addClass('input-holder')
-                        .append($('<input>').addClass('input-name').attr('type', 'text').attr('placeholder', 'Name...').attr('maxlength', '20'))))
-                .append($('<label>').text('Manufacturer:')
-                    .append($('<div>').addClass('input-holder')
-                        .append($('<input>').addClass('input-manufacturer').attr('type', 'text').attr('placeholder', 'Manufacturer...').attr('maxlength', '20'))))
-                .append($('<label>').text('Description:')
-                    .append($('<div>').addClass('input-holder')
-                        .append($('<textarea>').addClass('input-description').attr('type', 'text').attr('placeholder', 'Description...').attr('rows', '2')))))
+                .append($('<label>').text('Name:'))
+                .append($('<div>').addClass('input-holder')
+                    .append($('<input>').addClass('input-name').attr('type', 'text').attr('placeholder', 'Name...').attr('maxlength', '20')))
+                .append($('<label>').text('Manufacturer:'))
+                .append($('<div>').addClass('input-holder')
+                    .append($('<input>').addClass('input-manufacturer').attr('type', 'text').attr('placeholder', 'Manufacturer...').attr('maxlength', '20')))
+                .append($('<label>').text('Description:'))
+                .append($('<div>').addClass('input-holder')
+                    .append($('<textarea>').addClass('input-description').attr('type', 'text').attr('placeholder', 'Description...').attr('rows', '2'))))
 
             .append($('<div>').addClass('secondary-parameters')
                 .append($('<label>').text('Genres:'))
@@ -66,31 +66,26 @@ class CreateModel {
             ev.preventDefault();
             let val = this.value;
             switch (val) {
-                case 'Movie':
-                {
+                case 'Movie': {
                     that.renderCreateMovieModel();
                     that.attachEventsCreateMovieModel();
                     break;
                 }
-                case 'Game':
-                {
+                case 'Game': {
                     that.renderCreateGameModel();
                     that.attachEventsCreateGameModel();
                     break;
                 }
-                case 'Innovative':
-                {
+                case 'Innovative': {
                     that.renderCreateInnovativeModel();
                     break;
                 }
-                case 'Food':
-                {
+                case 'Food': {
                     that.renderCreateFoodModel();
                     that.attachEventsCreateFoodModel();
                     break;
                 }
-                case 'Crafts':
-                {
+                case 'Crafts': {
                     that.renderCreateCraftsModel();
                     that.attachEventsCreateCraftsModel();
                     break;
@@ -162,7 +157,7 @@ function submit() {
     let genres = addItemsFromList('.input-genres');
     let options = $('.input-genres').find('option');
     let targetPrice = Number($('.input-target-price').val());
-    switch (selectedModel){
+    switch (selectedModel) {
         case 'Movie':
             let director = $('.input-director input').val();
             let actors = addItemsFromList('.input-actors');
@@ -192,7 +187,7 @@ function submit() {
 function addItemsFromList(listSelector) {
     let arr = [];
     let options = $(listSelector).find('option');
-    for (let opt of options){
+    for (let opt of options) {
         arr.push(opt.value);
     }
     return arr;
