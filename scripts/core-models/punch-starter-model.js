@@ -39,8 +39,8 @@ class PunchStarterModel {
                 html += `<div>`+
                           `<label>Actors</label>`+
                           `<ul>`;
-                for(let obj of punchStarter){
-                    html+= `<li>${obj.actor}</li>\n`;
+                for(let actor of punchStarter.actor){
+                    html+= `<li>${actor}</li>\n`;
                 }
                 html+= `</ul>`+
                         `</div>`;
@@ -50,7 +50,12 @@ class PunchStarterModel {
                       `</div>`;
                 break;
             case 'Game':
-                
+                html+= `<div>`+
+                        `<label>Technologies Used</label>`;
+                for(let technologies of punchStarter.technologiesUsed){
+                    html += `<li>${obj.technologies}</li>`;
+                }
+                html += `</div>`;
         }
 
     }
