@@ -33,18 +33,17 @@ class CreateModel {
             .append($('<div>').addClass('secondary-parameters')
                 .append($('<label>').text('Genres:'))
                 .append($('<div>').addClass('list-holder')
-                    .append($('<select>').addClass('input-genres'))
-                    .append($('<div>')
-                        .append($('<input>').addClass('input-genre').attr('type', 'text').attr('placeholder', 'Add genre...'))
-                        .append($('<div>').addClass('button-holder')
-                            .append($('<button>').addClass('add-genre-button').text('Add'))
-                            .append($('<button>').addClass('remove-genre-button').text('Remove')))
-                        .append($('<label>').text('Target Price:'))
-                        .append($('<div>')
-                            .append($('<input>').addClass('input-target-price').attr('type', 'number').attr('placeholder', 'Target Price...'))))))
+                    .append($('<select>').addClass('input-genres')))
+                .append($('<div>').addClass('input-holder')
+                    .append($('<input>').addClass('input-genre').attr('type', 'text').attr('placeholder', 'Add genre...')))
+                .append($('<div>').addClass('button-holder')
+                    .append($('<button>').addClass('add-genre-button').text('Add'))
+                    .append($('<button>').addClass('remove-genre-button').text('Remove')))
+                .append($('<label>').text('Target Price:'))
+                .append($('<div>').addClass('input-holder')
+                    .append($('<input>').addClass('input-target-price').attr('type', 'number').attr('placeholder', 'Target Price...'))))
 
             .append($('<div>').addClass('individual-parameters'));
-
 
         let formHolder = $('<div>').addClass('create-form-holder')
             .append(form)
@@ -96,6 +95,24 @@ class CreateModel {
                 }
             }
         });
+
+        $('.add-genre-button').on('click', function (ev) {
+            ev.preventDefault();
+            let input = $('.input-genre');
+            let gender = input.val();
+            $('.input-genres').append($('<option>').val(gender).text(gender));
+            input.val('');
+        });
+
+        $('.remove-genre-button').on('click', function (ev) {
+            ev.preventDefault();
+            let select = $('.input-genres');
+            let gender = select.find(':selected');
+            select.find(gender).remove();
+        });
+
+
+
 
         $('.submit-button-holder').on('click', submitButton.submit);
     }
