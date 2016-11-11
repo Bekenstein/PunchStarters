@@ -51,8 +51,8 @@ class CreateModel {
             )
         }
         $('.wrapper main').html(html).append(formHolder);
-        //this.renderCreateMovieModel();
-        //this.attachEventsCreateMovieModel();
+        this.renderCreateMovieModel();
+        this.attachEventsCreateMovieModel();
     }
 
     attachEvents() {
@@ -102,29 +102,11 @@ class CreateModel {
     }
 
     renderCreateGameModel() {
-        let html = '<label>Technologies:</label>' +
-            '<div class="list-holder"><select class="input-technologies"></select></div>' +
-            '<div><input class="new-technology" placeholder="Add technology..."></div>' +
-            '<div class="button-holder">' +
-            '<button class="add-technology-button">Add</button>' +
-            '<button class="remove-technology-button">Remove</button>' +
-            '</div>';
-        $('.individual-parameters').append(html)
+       game.render();
     }
 
     attachEventsCreateGameModel() {
-        $('.add-actor-button').on('click', function () {
-            let input = $('.new-technology');
-            let tech = select.val();
-            $('.input-actors').append($('<option>').val(tech).text(tech));
-            input.val('');
-        });
-
-        $('.remove-actor-button').on('click', function () {
-            let select =$('.input-technologies');
-            let tech = select.find(':selected');
-            select.find(tech).remove();
-        });
+        game.attachEvents();
     }
 
     renderCreateInnovativeModel() {
