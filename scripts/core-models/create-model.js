@@ -17,12 +17,14 @@ class CreateModel {
         let html = $('<div>').addClass('create-title').text('Create a PunchStarter')
             .append($('<div>').addClass('punch-starter-category')
                 .append(selectList));
-        html.append($('<div>').addClass('main-parameters'));
+        let formHolder = $('<div>').addClass('create-form-holder')
+            .append($('<form>'))
+            .append($('<div class="submit-button-holder">'));
         for (let i = 0; i < 3; i++) {
             html.append($('<label>').append($('<div>').addClass('input-holder'))
             )
         }
-        $('.wrapper main').html(html);
+        $('.wrapper main').html(html).append(formHolder);
         this.renderCreateMovieModel();
         this.attachEventsCreateMovieModel();
 
