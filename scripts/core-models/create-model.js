@@ -161,7 +161,7 @@ function submit() {
     let description = $('.input-description').val();
     let genres = addItemsFromList('.input-genres');
     let options = $('.input-genres').find('option');
-    let targetPrice = Number($('.input-target-price'));
+    let targetPrice = Number($('.input-target-price').val());
     switch (selectedModel){
         case 'Movie':
             let director = $('.input-director input').val();
