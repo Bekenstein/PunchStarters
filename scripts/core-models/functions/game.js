@@ -12,6 +12,7 @@ function render(){
 function attachEvents(){
     $('.add-technology-button').on('click', function (ev) {
         ev.preventDefault();
+        ev.stopPropagation();
         let input = $('.new-technology');
         let val = input.val();
         $('.input-technologies').append($('<option>').val(val).text(val));
