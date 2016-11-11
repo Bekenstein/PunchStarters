@@ -30,6 +30,10 @@ class ListModel {
         html.append($('<table>').addClass('punch-starter-table').append(table));
         $('.wrapper main').html(html);
     }
+
+    attachEvents(){
+
+    }
 }
 
 module.exports = ListModel;
