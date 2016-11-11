@@ -8,8 +8,12 @@ class CreateModel {
     constructor(){
 
     }
-    render(categories){
-        //TODO:
+    render(categories) {
+        let html = $('<div>').addClass('create-title').text('Create a PunchStarter')
+            .append($('<div>').addClass('punch-starter-category')
+                .append($('<select>')));
+        $('.wrapper main').html(html);
+
     }
     attachEvents(){
         //TODO:
