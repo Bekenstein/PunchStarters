@@ -30,14 +30,17 @@ class CreateModel {
                         .append($('<textarea>').addClass('input-description').attr('type', 'text').attr('placeholder', 'Description...').attr('rows', '2')))))
 
             .append($('<div>').addClass('secondary-parameters')
-                .append($('<label>').text('Genres:')
-                    .append($('<div>').addClass('list-holder')
-                        .append($('<select>').addClass('input-genres'))
-                        .append($('<div>')
-                            .append($('<input>').addClass('input-genre').attr('type', 'text').attr('placeholder', 'Add genre...')))
+                .append($('<label>').text('Genres:'))
+                .append($('<div>').addClass('list-holder')
+                    .append($('<select>').addClass('input-genres'))
+                    .append($('<div>')
+                        .append($('<input>').addClass('input-genre').attr('type', 'text').attr('placeholder', 'Add genre...'))
                         .append($('<div>').addClass('button-holder')
                             .append($('<button>').addClass('add-genre-button').text('Add'))
-                            .append($('<button>').addClass('remove-genre-button').text('Remove'))))))
+                            .append($('<button>').addClass('remove-genre-button').text('Remove')))
+                        .append($('<label>').text('Target Price:'))
+                        .append($('<div>')
+                            .append($('<input>').addClass('input-target-price').attr('type', 'number').attr('placeholder', 'Target Price...'))))))
 
             .append($('<div>').addClass('individual-parameters'));
 
@@ -103,7 +106,7 @@ class CreateModel {
     }
 
     renderCreateGameModel() {
-       game.render();
+        game.render();
     }
 
     attachEventsCreateGameModel() {
