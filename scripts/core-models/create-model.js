@@ -1,46 +1,50 @@
+let movie = require('./functions/movie.js');
+let game = require('./functions/game.js');
+let innovative = require('./functions/innovative.js');
+let food = require('./functions/food.js');
+let crafts = require('./functions/crafts.js');
+
 class CreateModel {
     constructor(){
 
     }
     render(categories){
-        console.log('a');
-        console.log('b');
-        console.log('c');
+        //TODO:
     }
     attachEvents(){
         //TODO:
     }
 
-    renderCreateMovieModel(){
-        //TODO:
+    renderMovieModel(){
+        movie.render();
     }
     attachEventsCreateMovieModel(){
-        //TODO:
+        movie.attachEvents();
     }
 
     renderCreateGameModel(){
-        //TODO:
+        game.render();
     }
     attachEventsCreateGameModel(){
-        //TODO:
+        game.attachEvents();
     }
 
     renderCreateInnovativeModel(){
-        //TODO:
+        innovative.render();
     }
 
     renderCreateFoodModel(){
-        //TODO:
+        food.render();
     }
     attachEventsCreateFoodModel(){
-        //TODO:
+        food.attachEvents();
     }
 
     renderCreateCraftsModel(){
-        //TODO:
+        crafts.render();
     }
     attachEventsCreateCraftsModel(){
-        //TODO:
+        crafts.attachEvents();
     }
 }
 
