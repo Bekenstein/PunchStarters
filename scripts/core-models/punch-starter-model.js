@@ -24,6 +24,7 @@ class PunchStarterModel {
 
         $('.wrapper main').html(html);
         this.renderLists(punchStarter);
+        this.renderProgress(punchStarter);
 
     }
     attachEvents(punchStarter){
@@ -89,6 +90,11 @@ class PunchStarterModel {
     }
 
     renderProgress(punchStarter){
+      let html = `<p>Progress</p>`+
+              `<div class="donate-holder">`+
+              `<div class="progress-bar-outer">`+
+              `<div class="progress-bar-inner">`+
+              ``
 
     }
 }
