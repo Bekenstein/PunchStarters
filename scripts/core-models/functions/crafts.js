@@ -10,14 +10,16 @@ function render(){
 }
 
 function attachEvents(){
-    $('.add-resource-button').on('click', function () {
+    $('.add-resource-button').on('click', function (ev) {
+        ev.preventDefault();
         let input = $('.new-resource');
         let resource = input.val();
         $('.input-resources').append($('<option>').val(resource).text(resource));
         input.val('');
     });
 
-    $('.remove-resource-button').on('click', function () {
+    $('.remove-resource-button').on('click', function (ev) {
+        ev.preventDefault();
         let select = $('.input-resources');
         let resource = select.find(':selected');
         select.find(resource).remove();
