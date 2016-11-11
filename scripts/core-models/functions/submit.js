@@ -37,7 +37,7 @@ function submit() {
             punchStarter = new InnovativePunchStarter();
             break;
     }
-    console.log(punchStarter)
+    $('.wrapper main').trigger('createPunchStarter', [punchStarter]);
 }
 
 function addItemsFromList(listSelector) {
