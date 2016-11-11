@@ -19,11 +19,15 @@ class ListModel {
         );
         for (let data of database) {
             let progress = Number((data.accumulatedMoney / data.targetPrice) * 100).toFixed(2);
-            table.append($('<tr>')
+            table.append($('<tr>').on('click', function () {
+
+                        $('.wrapper main').trigger('changePage', ['details', data.id] );
+
+                })
                 .append($('<td>').text(data.id))
                 .append($('<td>').text(data.name))
                 .append($('<td>').text(data.manufacturer))
-                .append($('<td>').text(data.constructor.name.replace('PunchStarter','')))
+                .append($('<td>').text(data.constructor.name.replace('PunchStarter', '')))
                 .append($('<td>').text(`${progress}%`)));
         }
 
@@ -31,7 +35,7 @@ class ListModel {
         $('.wrapper main').html(html);
     }
 
-    attachEvents(){
+    attachEvents() {
 
     }
 }

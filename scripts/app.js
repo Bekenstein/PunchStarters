@@ -19,8 +19,8 @@ let listModel = new ListModel();
 let createModel = new CreateModel();
 let punchStarterModel = new PunchStarterModel();
 
-$('.wrapper main').on('changePage', function(event, location) {
-    switch(location) {
+$('.wrapper main').on('changePage', function (event, location,punchStarter) {
+    switch (location) {
         case "home":
             let isLoggedIn = sessionStorage['username'] != undefined;
             homeModel.render(isLoggedIn, punchStarterDatabase);
@@ -38,10 +38,14 @@ $('.wrapper main').on('changePage', function(event, location) {
             createModel.render(Categories);
             createModel.attachEvents();
             break;
+        case 'details':
+            punchStarterModel.render(punchStarter);
+            punchStarterModel.attachEvents(punchStarter);
+
     }
 });
 
-$('.wrapper main').on('createPunchStarter', function(event, punchStarter) {
+$('.wrapper main').on('createPunchStarter', function (event, punchStarter) {
     punchStarterDatabase.push(punchStarter);
     $('.wrapper main').trigger('changePage', ['list']);
 });
