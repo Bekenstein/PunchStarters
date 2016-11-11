@@ -8,16 +8,16 @@ class PunchStarterModel {
              `<div class = "punch-starter-caption">          `+
              `<label>${punchStarter.name}</label>            `+
              `<label>${punchStarter.type}</label>            `+
+             `</div>                                         `+
              `<div class = "punch-starter-resume">           `+
              `<label>Manufacturer</label>                    `+
              `<p>${punchStarter.manufacturer}</p>            `+
              `<label>Description</label>                     `+
              `<p>${punchStarter.description}</p>             `+
+             `</div>                                         `+
              `<div class = "punch-starter-lists">            `+
+             `</div>                                         `+
              `<div class = "punch-starter-progress">         `+
-             `</div>                                         `+
-             `</div>                                         `+
-             `</div>                                         `+
              `</div>                                         `+
              `</div>                                         `;
         $('.wrapper main').html(html);
