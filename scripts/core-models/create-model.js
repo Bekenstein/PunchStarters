@@ -21,20 +21,20 @@ class CreateModel {
             .append($('<div>').addClass('main-parameters')
                 .append($('<label>').text('Name:')
                     .append($('<div>').addClass('input-holder')
-                        .append($('<input>').addClass('input-name').attr('type', 'text').attr('value', 'Name...').attr('maxlength', '20'))))
+                        .append($('<input>').addClass('input-name').attr('type', 'text').attr('placeholder', 'Name...').attr('maxlength', '20'))))
                 .append($('<label>').text('Manufacturer:')
                     .append($('<div>').addClass('input-holder')
-                        .append($('<input>').addClass('input-manufacturer').attr('type', 'text').attr('value', 'Manufacturer...').attr('maxlength', '20'))))
+                        .append($('<input>').addClass('input-manufacturer').attr('type', 'text').attr('placeholder', 'Manufacturer...').attr('maxlength', '20'))))
                 .append($('<label>').text('Description:')
                     .append($('<div>').addClass('input-holder')
-                        .append($('<textarea>').addClass('input-description').attr('type', 'text').attr('value', 'Description...').attr('rows', '2')))))
+                        .append($('<textarea>').addClass('input-description').attr('type', 'text').attr('placeholder', 'Description...').attr('rows', '2')))))
 
             .append($('<div>').addClass('secondary-parameters')
                 .append($('<label>').text('Genres:')
                     .append($('<div>').addClass('list-holder')
                         .append($('<select>').addClass('input-genres'))
                         .append($('<div>')
-                            .append($('<input>').addClass('input-genre').attr('type', 'text').attr('value', 'Add genre...')))
+                            .append($('<input>').addClass('input-genre').attr('type', 'text').attr('placeholder', 'Add genre...')))
                         .append($('<div>').addClass('button-holder')
                             .append($('<button>').addClass('add-genre-button').text('Add'))
                             .append($('<button>').addClass('remove-genre-button').text('Remove'))))))
@@ -57,7 +57,8 @@ class CreateModel {
 
     attachEvents() {
         let that = this;
-        $('.punch-starter-category select').on('change', function () {
+        $('.punch-starter-category select').on('change', function (ev) {
+            ev.preventDefault();
             let val = this.value;
             switch (val) {
                 case 'Movie':

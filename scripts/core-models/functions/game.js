@@ -10,14 +10,16 @@ function render(){
 }
 
 function attachEvents(){
-    $('.add-actor-button').on('click', function () {
+    $('.add-actor-button').on('click', function (ev) {
+        ev.preventDefault();
         let input = $('.new-technology');
         let tech = select.val();
         $('.input-actors').append($('<option>').val(tech).text(tech));
         input.val('');
     });
 
-    $('.remove-actor-button').on('click', function () {
+    $('.remove-actor-button').on('click', function (ev) {
+        ev.preventDefault();
         let select =$('.input-technologies');
         let tech = select.find(':selected');
         select.find(tech).remove();

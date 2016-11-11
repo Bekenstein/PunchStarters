@@ -12,14 +12,16 @@ function render(){
 }
 
 function attachEvents(){
-    $('.add-actor-button').on('click', function () {
+    $('.add-actor-button').on('click', function (ev) {
+        ev.preventDefault();
         let input = $('.new-actor');
         let actor = input.val();
         $('.input-actors').append($('<option>').val(actor).text(actor));
         input.val('');
     });
 
-    $('.remove-actor-button').on('click', function () {
+    $('.remove-actor-button').on('click', function (ev) {
+        ev.preventDefault();
         let select = $('.input-actors');
         let actor = select.find(':selected');
         select.find(actor).remove();
