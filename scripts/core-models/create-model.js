@@ -17,6 +17,11 @@ class CreateModel {
         let html = $('<div>').addClass('create-title').text('Create a PunchStarter')
             .append($('<div>').addClass('punch-starter-category')
                 .append(selectList));
+        html.append($('<div>').addClass('main-parameters'));
+        for (let i = 0; i < 3; i++) {
+            html.append($('<label>').append($('<div>').addClass('input-holder'))
+            )
+        }
         $('.wrapper main').html(html);
         this.renderCreateMovieModel();
         this.attachEventsCreateMovieModel();
@@ -24,7 +29,11 @@ class CreateModel {
     }
 
     attachEvents() {
-        $('.punch-starter-category select').on('chan')
+        $('.punch-starter-category select').on('change', function (ev, data, selector) {
+            let a = data;
+            let e = ev;
+            let b = 6;
+        });
         //TODO:
     }
 
