@@ -5,49 +5,60 @@ let food = require('./functions/food.js');
 let crafts = require('./functions/crafts.js');
 
 class CreateModel {
-    constructor(){
+    constructor() {
 
     }
+
     render(categories) {
+        let selectList = $('<select>');
+        for (let obj in categories) {
+            selectList.append($('<option>').val(categories[obj]).text(categories[obj]))
+        }
         let html = $('<div>').addClass('create-title').text('Create a PunchStarter')
             .append($('<div>').addClass('punch-starter-category')
-                .append($('<select>')));
+                .append(selectList));
         $('.wrapper main').html(html);
 
     }
-    attachEvents(){
+
+    attachEvents() {
+        
         //TODO:
     }
 
-    renderMovieModel(){
+    renderMovieModel() {
         movie.render();
     }
-    attachEventsCreateMovieModel(){
+
+    attachEventsCreateMovieModel() {
         movie.attachEvents();
     }
 
-    renderCreateGameModel(){
+    renderCreateGameModel() {
         game.render();
     }
-    attachEventsCreateGameModel(){
+
+    attachEventsCreateGameModel() {
         game.attachEvents();
     }
 
-    renderCreateInnovativeModel(){
+    renderCreateInnovativeModel() {
         innovative.render();
     }
 
-    renderCreateFoodModel(){
+    renderCreateFoodModel() {
         food.render();
     }
-    attachEventsCreateFoodModel(){
+
+    attachEventsCreateFoodModel() {
         food.attachEvents();
     }
 
-    renderCreateCraftsModel(){
+    renderCreateCraftsModel() {
         crafts.render();
     }
-    attachEventsCreateCraftsModel(){
+
+    attachEventsCreateCraftsModel() {
         crafts.attachEvents();
     }
 }
