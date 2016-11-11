@@ -17,9 +17,22 @@ class CreateModel {
         let html = $('<div>').addClass('create-title').text('Create a PunchStarter')
             .append($('<div>').addClass('punch-starter-category')
                 .append(selectList));
+        let form = $('<form>')
+            .append($('<div>').addClass('main-parameters')
+                .append($('<label>')
+                    .append($('<div>').addClass('input-holder')))
+                  .append($('<label>')
+                    .append($('<div>').addClass('input-holder')))
+                .append($('<label>')
+                    .append($('<div>').addClass('input-holder')))
+            )
+            .append($('<div>').addClass('secondary-parameters'))
+            .append($('<div>').addClass('individual-parameters'));
+
         let formHolder = $('<div>').addClass('create-form-holder')
-            .append($('<form>'))
-            .append($('<div class="submit-button-holder">'));
+            .append(form)
+            .append($('<div class="submit-button-holder">')
+                .append($('<button>').text('Submit PunchStarter')));
         for (let i = 0; i < 3; i++) {
             html.append($('<label>').append($('<div>').addClass('input-holder'))
             )
