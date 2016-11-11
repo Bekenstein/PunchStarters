@@ -6,10 +6,6 @@ class ListModel {
 
     render(database) {
         database.sort((a, b)=> {
-            console.log(a);
-            console.log(a[0]);
-            let oldReturn = a[0] - b[0];
-            console.log(oldReturn);
             return a.id - b.id;
         });
         let html = $('<div>').addClass('punch-starter-list-holder');
