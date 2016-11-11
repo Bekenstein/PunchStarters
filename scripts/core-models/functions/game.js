@@ -6,7 +6,7 @@ function render(){
             '<button class="add-technology-button">Add</button>' +
             '<button class="remove-technology-button">Remove</button>' +
         '</div>';
-    $('.individual-parameters').append(html)
+    $('.individual-parameters').html(html)
 }
 
 function attachEvents(){

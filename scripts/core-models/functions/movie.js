@@ -8,7 +8,7 @@ function render(){
             '<button class="add-actor-button">Add</button>' +
             '<button class="remove-actor-button">Remove</button>' +
         '</div>';
-    $('.individual-parameters').append(html)
+    $('.individual-parameters').html(html)
 }
 
 function attachEvents(){

@@ -1,13 +1,14 @@
 function render(){
-    let html = '<label>Actors:</label>' +
+    let html = '<label>Recipe:</label>' +
         '<div class="list-holder"><select class="input-ingredients"></select></div>' +
         '<div><input class="new-ingredient" placeholder="Add ingredients..."></div>' +
         '<div class="button-holder">' +
         '<button class="add-ingredient-button">Add</button>' +
         '<button class="remove-ingredient-button">Remove</button>' +
         '</div>'+
-        '<label>Recipe:</label>' +
+        '<label>Ingredients:</label>' +
         '<div class="input-recipe"><input type="text" placeholder="Recipe..."></div>';
+    $('.individual-parameters').html(html);
 }
 
 function attachEvents(){
