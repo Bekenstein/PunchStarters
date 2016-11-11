@@ -49,10 +49,7 @@ class CreateModel {
             .append(form)
             .append($('<div class="submit-button-holder">')
                 .append($('<button>').text('Submit PunchStarter')));
-        for (let i = 0; i < 3; i++) {
-            html.append($('<label>').append($('<div>').addClass('input-holder'))
-            )
-        }
+
         $('.wrapper main').html(html).append(formHolder);
         this.renderCreateMovieModel();
         this.attachEventsCreateMovieModel();
