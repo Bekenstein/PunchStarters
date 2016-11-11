@@ -112,7 +112,6 @@ punchStarterDatabase.push(
 punchStarterDatabase[1].accumulatedMoney = 153947832.12482;
 punchStarterDatabase[3].accumulatedMoney += 2000;
 punchStarterDatabase[4].accumulatedMoney = 213;
-module.exports = punchStarterDatabase;
 
 homeModel.render();
 homeModel.attachEvents();
