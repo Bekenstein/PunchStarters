@@ -10,19 +10,19 @@ function render(){
 }
 
 function attachEvents(){
-    $('.add-actor-button').on('click', function (ev) {
+    $('.add-technology-button').on('click', function (ev) {
         ev.preventDefault();
         let input = $('.new-technology');
-        let tech = select.val();
-        $('.input-actors').append($('<option>').val(tech).text(tech));
+        let val = input.val();
+        $('.input-technologies').append($('<option>').val(val).text(val));
         input.val('');
     });
 
-    $('.remove-actor-button').on('click', function (ev) {
+    $('.remove-technology-button').on('click', function (ev) {
         ev.preventDefault();
         let select =$('.input-technologies');
-        let tech = select.find(':selected');
-        select.find(tech).remove();
+        let val = select.find(':selected');
+        select.find(val).remove();
     });
 }
 module.exports = {render, attachEvents};

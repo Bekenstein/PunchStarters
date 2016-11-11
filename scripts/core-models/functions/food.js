@@ -15,16 +15,16 @@ function attachEvents(){
     $('.add-ingredient-button').on('click', function (ev) {
         ev.preventDefault();
         let input = $('.new-ingredient');
-        let ingredient = input.val();
-        $('.input-ingredients').append($('<option>').val(ingredient).text(ingredient));
+        let val = input.val();
+        $('.input-ingredients').append($('<option>').val(val).text(val));
         input.val('');
     });
 
     $('.remove-ingredient-button').on('click', function (ev) {
         ev.preventDefault();
         let select = $('.input-ingredients');
-        let ingredient = select.find(':selected');
-        select.find(ingredient).remove();
+        let val = select.find(':selected');
+        select.find(val).remove();
     });
 }
 module.exports = {render, attachEvents};
