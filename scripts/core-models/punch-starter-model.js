@@ -109,10 +109,11 @@ class PunchStarterModel {
                         let accumulatedMoney = punchStarter.accumulatedMoney();
                         punchStarter.accumulatedMoney(accumulatedMoney + moneyToAdd);
 
+
                     }))));
-        $('.progress-bar-inner').css('width', (progress < 10 ? (progress * 0.7) + "vw" : "70vw"));
         $('.punch-starter-progress').html(html);
-        
+        $('.progress-bar-inner').css('width', (progress < 10 ? (progress * 0.7) + "vw" : "70vw"));
+
     }
 }
 
