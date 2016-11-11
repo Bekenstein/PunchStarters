@@ -156,12 +156,12 @@ class CreateModel {
 function submit() {
     let selectedModel = $('.punch-starter-category select').find(':selected').val();
     let punchStarter = {};
-    let name = $('.input-name').val();
-    let manufacturer = $('.input-manufacturer').val();
-    let description = $('.input-description').val();
+    let name = isValidString($('.input-name').val());
+    let manufacturer = isValidString($('.input-manufacturer').val());
+    let description = isValidString($('.input-description').val());
     let genres = addItemsFromList('.input-genres');
     let options = $('.input-genres').find('option');
-    let targetPrice = Number($('.input-target-price').val());
+    let targetPrice = Number($('.input-target-price').val()) || 0;
     switch (selectedModel){
         case 'Movie':
             let director = $('.input-director input').val();
@@ -196,6 +196,12 @@ function addItemsFromList(listSelector) {
         arr.push(opt.value);
     }
     return arr;
+}
+function isValidString(input) {
+    if(typeof input != "string" || input.length == 0){
+        throw new TypeError('no empty entries allowed')
+    }
+    return input;
 }
 
 module.exports = CreateModel;
