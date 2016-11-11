@@ -21,7 +21,7 @@ class ListModel {
             let progress = Number((data.accumulatedMoney / data.targetPrice) * 100).toFixed(2);
             table.append($('<tr>').on('click', function () {
 
-                        $('.wrapper main').trigger('changePage', ['details', data.id] );
+                        $('.wrapper main').trigger('changePage', ['details', data] );
 
                 })
                 .append($('<td>').text(data.id))
