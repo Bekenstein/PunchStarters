@@ -18,15 +18,17 @@ class CreateModel {
             .append($('<div>').addClass('punch-starter-category')
                 .append(selectList));
         $('.wrapper main').html(html);
+        this.renderCreateMovieModel();
+        this.attachEventsCreateMovieModel();
 
     }
 
     attachEvents() {
-        
+        $('.punch-starter-category select').on('chan')
         //TODO:
     }
 
-    renderMovieModel() {
+    renderCreateMovieModel() {
         movie.render();
     }
 
