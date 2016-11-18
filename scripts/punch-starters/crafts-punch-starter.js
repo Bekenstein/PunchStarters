@@ -7,6 +7,9 @@ class CraftsPunchStarter extends BasePunchStarter {
         this._resources = BasePunchStarter.validateArray(resources).map(x=>BasePunchStarter.validateString(x));
     }
 
+    //just showing something to some people
+    //dont worry guys
+
     get resources() {
         return this._resources;
     }

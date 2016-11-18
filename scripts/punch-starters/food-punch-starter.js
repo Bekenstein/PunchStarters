@@ -1,3 +1,4 @@
+
 let BasePunchStarter = require('./base-punch-starter.js');
 
 class FoodPunchStarter extends BasePunchStarter {

@@ -106,8 +106,8 @@ class PunchStarterModel {
                     .append(($('<input>').attr('type', 'number').attr('id', 'donate-input')))
                     .append(($('<button>').text('Donate').on('click', function () {
                         let moneyToAdd = Number($('#donate-input').val());
-                        let accumulatedMoney = punchStarter.accumulatedMoney();
-                        punchStarter.accumulatedMoney(accumulatedMoney + moneyToAdd);
+                        let accumulatedMoney = punchStarter.accumulatedMoney;
+                        punchStarter.accumulatedMoney = accumulatedMoney + moneyToAdd;
 
 
                     }))));
